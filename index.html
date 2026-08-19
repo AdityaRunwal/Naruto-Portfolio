@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Runwal | AI/ML Portfolio</title>
+    <meta name="description" content="Personal Portfolio of Aditya Runwal - Aspiring AI/ML Engineer passionate about Artificial Intelligence, Machine Learning, Deep Learning, and IoT.">
+    <title>Aditya Runwal | AI/ML Shinobi Portfolio</title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -15,55 +16,73 @@
 
     <!-- ================= NAVIGATION ================= -->
 
-    <nav>
+    <nav id="navbar">
 
         <div class="logo">
-            Aditya Runwal
+            <i class="fa-solid fa-fire-flame-curved logo-icon"></i> Aditya Runwal
         </div>
 
-        <ul>
+        <ul id="nav-menu">
 
-            <li><a href="#">Home</a></li>
+            <li><a href="#home">Home</a></li>
 
             <li><a href="#about">About</a></li>
 
             <li><a href="#skills">Skills</a></li>
 
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#missions">Missions</a></li>
 
             <li><a href="#contact">Contact</a></li>
 
         </ul>
 
+        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
     </nav>
 
     <!-- ================= HERO ================= -->
 
-    <section class="hero">
+    <section class="hero" id="home">
 
         <div class="hero-content">
+
+            <div class="hero-badge">
+                <i class="fa-solid fa-scroll"></i> Ninja Way of Code &bull; AI/ML Practitioner
+            </div>
 
             <h1>Hi, I'm</h1>
 
             <h2>Aditya Runwal</h2>
 
-            <h3>Aspiring AI/ML Engineer</h3>
+            <h3>Aspiring <span class="accent-text">AI / ML Engineer</span></h3>
 
             <p>
-                Passionate about Artificial Intelligence,
-                Machine Learning, Deep Learning and
-                building real-world intelligent solutions.
+                Driven by relentless determination, I specialize in Artificial Intelligence,
+                Machine Learning, Deep Learning, and IoT to build intelligent, real-world solutions.
             </p>
+
+            <div class="hero-tags">
+                <span><i class="fa-solid fa-brain"></i> Machine Learning</span>
+                <span><i class="fa-solid fa-microchip"></i> IoT Systems</span>
+                <span><i class="fa-solid fa-network-wired"></i> Deep Learning</span>
+                <span><i class="fa-solid fa-chart-line"></i> EDA & Data Science</span>
+            </div>
 
             <div class="buttons">
 
-                <button class="btn">
-                    View Projects
-                </button>
+                <a href="#missions" class="btn">
+                    <i class="fa-solid fa-scroll"></i> View Missions
+                </a>
 
-                <button class="btn-outline">
-                    Download Resume
-                </button>
+                <a href="assets/docs/resume.pdf" class="btn-outline" download="Aditya_Runwal_Resume.pdf" title="Add your resume PDF to assets/docs/resume.pdf">
+                    <i class="fa-solid fa-file-arrow-down"></i> Resume PDF
+                </a>
+
+                <a href="#contact" class="btn-outline">
+                    <i class="fa-solid fa-paper-plane"></i> Contact Me
+                </a>
 
             </div>
 
@@ -83,81 +102,97 @@
 
         <div class="about-content">
 
+            <span class="section-tag"><i class="fa-solid fa-fire"></i> Ninja Way</span>
+
             <h2>About Me</h2>
 
             <p>
                 I am an aspiring AI & Machine Learning Engineer passionate about
-                Artificial Intelligence, Machine Learning,
-                Data Science and IoT.
+                Artificial Intelligence, Machine Learning, Data Science, and IoT embedded systems.
             </p>
 
             <p>
-                I enjoy solving real-world problems,
-                learning new technologies,
-                and continuously improving my technical skills.
+                With continuous learning as my core ethos, I solve real-world problems by designing end-to-end intelligent models and hardware-software integrations.
             </p>
 
         </div>
 
     </section>
 
-<!-- ================= SKILLS ================= -->
+    <!-- ================= SKILLS ================= -->
 
-<section class="skills" id="skills">
+    <section class="skills" id="skills">
 
-    <section class="skills" id="skills"></section>
+        <span class="section-tag"><i class="fa-solid fa-shuriken"></i> Tech Arsenal</span>
 
-        <h2 class="section-title">My Skills</h2>
+        <h2 class="section-title">Technical Jutsu & Skills</h2>
 
         <div class="skills-container">
 
             <div class="skill-card">
                 <i class="fa-brands fa-python"></i>
                 <h3>Python</h3>
+                <span class="skill-rank">Primary Language</span>
             </div>
 
             <div class="skill-card">
                 <i class="fa-solid fa-code"></i>
                 <h3>C++</h3>
+                <span class="skill-rank">System & Performance</span>
             </div>
 
             <div class="skill-card">
                 <i class="fa-solid fa-robot"></i>
                 <h3>Machine Learning</h3>
+                <span class="skill-rank">Core Discipline</span>
             </div>
 
             <div class="skill-card">
                 <i class="fa-solid fa-brain"></i>
                 <h3>Deep Learning</h3>
+                <span class="skill-rank">Neural Networks</span>
             </div>
 
             <div class="skill-card">
                 <i class="fa-solid fa-diagram-project"></i>
                 <h3>Data Structures & Algorithms</h3>
+                <span class="skill-rank">Problem Solving</span>
             </div>
 
             <div class="skill-card">
                 <i class="fa-brands fa-git-alt"></i>
                 <h3>Git</h3>
+                <span class="skill-rank">Version Control</span>
             </div>
 
         </div>
 
     </section>
 
-</section>
+    <!-- ================= MISSIONS (PROJECTS) ================= -->
 
-<!-- ================= PROJECTS ================= -->
+    <section class="projects" id="missions">
 
-<section class="projects" id="projects">
+        <span class="section-tag"><i class="fa-solid fa-scroll"></i> Project Showcase</span>
 
-    <section class="projects" id="projects"></section>
+        <h2 class="section-title">My Missions</h2>
 
-        <h2 class="section-title">Projects</h2>
+        <!-- Mission Filter Tabs -->
+        <div class="mission-filters">
+            <button class="filter-btn active" data-filter="all">All Missions</button>
+            <button class="filter-btn" data-filter="ai-iot">AI & IoT</button>
+            <button class="filter-btn" data-filter="ml-eda">ML & EDA</button>
+            <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+        </div>
 
         <div class="projects-container">
 
-            <div class="project-card">
+            <!-- Mission Card 1: Flagship S-Rank Project -->
+            <div class="project-card" data-category="ai-iot">
+
+                <div class="card-header-badge">
+                    <span class="mission-rank rank-s"><i class="fa-solid fa-star"></i> S-RANK MISSION</span>
+                </div>
 
                 <img src="assets/images/smart-fridge.jpg"
                     alt="Smart Refrigerator Project"
@@ -166,9 +201,9 @@
                 <h3>Smart Refrigerator Inventory Management System</h3>
 
                 <p>
-                    An AI-powered IoT project that automatically monitors food
-                    inventory, tracks expiry dates, monitors temperature and
-                    humidity, and recommends recipes based on available
+                    An AI-powered IoT solution that automatically monitors food
+                    inventory in real-time, tracks expiry dates, monitors temperature and
+                    humidity, and intelligently recommends recipes based on available
                     ingredients.
                 </p>
 
@@ -182,31 +217,132 @@
 
                     <span>Sensors</span>
 
+                    <span>Recipe AI</span>
+
                 </div>
 
                 <div class="project-buttons">
 
-                    <a href="#" class="project-btn">GitHub</a>
+                    <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        <i class="fa-brands fa-github"></i> GitHub Code
+                    </a>
 
-                    <a href="#" class="project-btn">Live Demo</a>
+                    <a href="#contact" class="project-btn project-btn-secondary">
+                        <i class="fa-solid fa-bolt"></i> Live Demo
+                    </a>
 
                 </div>
 
             </div>
 
+            <!-- Mission Card 2: A-Rank Machine Learning & EDA Template -->
+            <div class="project-card" data-category="ml-eda">
+
+                <div class="card-header-badge">
+                    <span class="mission-rank rank-a"><i class="fa-solid fa-certificate"></i> A-RANK MISSION</span>
+                </div>
+
+                <div class="project-placeholder-image">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <h3>Exploratory Data Analysis & Predictive ML Pipeline</h3>
+
+                <p>
+                    Comprehensive data analysis and machine learning pipeline incorporating feature engineering, outlier detection, data preprocessing, and classification algorithms for predictive insights.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+
+                    <span>Pandas</span>
+
+                    <span>Scikit-Learn</span>
+
+                    <span>EDA</span>
+
+                    <span>Seaborn</span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        <i class="fa-brands fa-github"></i> GitHub Code
+                    </a>
+
+                    <a href="#contact" class="project-btn project-btn-secondary">
+                        <i class="fa-solid fa-circle-info"></i> Project Details
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Mission Card 3: A-Rank Deep Learning Template -->
+            <div class="project-card" data-category="deep-learning">
+
+                <div class="card-header-badge">
+                    <span class="mission-rank rank-a"><i class="fa-solid fa-certificate"></i> A-RANK MISSION</span>
+                </div>
+
+                <div class="project-placeholder-image">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <h3>Computer Vision & Neural Network Architecture</h3>
+
+                <p>
+                    Deep learning Convolutional Neural Network (CNN) designed for pattern recognition, image classification, and real-time visual dataset processing.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+
+                    <span>PyTorch / TensorFlow</span>
+
+                    <span>OpenCV</span>
+
+                    <span>CNN</span>
+
+                    <span>Deep Learning</span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        <i class="fa-brands fa-github"></i> GitHub Code
+                    </a>
+
+                    <a href="#contact" class="project-btn project-btn-secondary">
+                        <i class="fa-solid fa-circle-info"></i> Project Details
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- 
+                NOTE: TO ADD A NEW MISSION CARD IN THE FUTURE:
+                Copy one of the .project-card div blocks above.
+                Set data-category to "ai-iot", "ml-eda", or "deep-learning".
+                Set rank to "rank-s", "rank-a", or "rank-b".
+            -->
+
         </div>
 
     </section>
 
-</section>
+    <!-- ================= CONTACT ================= -->
 
-<!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
 
-<section class="contact" id="contact">
+        <span class="section-tag"><i class="fa-solid fa-comment-dots"></i> Get In Touch</span>
 
-    <section class="contact" id="contact"></section>
-
-        <h2 class="section-title">Contact Me</h2>
+        <h2 class="section-title">Summoning & Contact</h2>
 
         <div class="contact-container">
 
@@ -219,7 +355,7 @@
             <div class="contact-card">
                 <i class="fa-brands fa-github"></i>
                 <h3>GitHub</h3>
-                <a href="https://github.com/AdityaRunwal" target="_blank">
+                <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer">
                     github.com/AdityaRunwal
                 </a>
             </div>
@@ -227,8 +363,8 @@
             <div class="contact-card">
                 <i class="fa-brands fa-linkedin"></i>
                 <h3>LinkedIn</h3>
-                <a href="#" target="_blank">
-                    Add Your LinkedIn Link
+                <a href="https://linkedin.com/in/YOUR_LINKEDIN_HANDLE" target="_blank" rel="noopener noreferrer" title="Replace YOUR_LINKEDIN_HANDLE with your actual LinkedIn username">
+                    linkedin.com/in/YOUR_LINKEDIN_HANDLE
                 </a>
             </div>
 
@@ -236,7 +372,11 @@
 
     </section>
 
-</section>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <p>&copy; 2026 Aditya Runwal &bull; AI/ML Shinobi Engineer. Built with determination.</p>
+    </footer>
 
     <script src="js/script.js"></script>
 
