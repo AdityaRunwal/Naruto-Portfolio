@@ -6,21 +6,25 @@ A professional, high-performance personal portfolio built for an **Aspiring AI/M
 
 ## 🎯 Purpose & Focus
 
-This portfolio showcases technical expertise, hardware-software projects, and machine learning models for **Aditya Runwal**. 
+This portfolio showcases technical expertise, learning progression, and machine learning models for **Aditya Runwal**. 
 
 - **Primary Role**: Aspiring AI & Machine Learning Engineer
-- **Core Domains**: Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Exploratory Data Analysis (EDA), and IoT Systems.
+- **Core Learning Progression**: Exploratory Data Analysis (EDA) → Machine Learning → Deep Learning.
 - **Design Philosophy**: 70% Professional Engineering Focus / 30% Subtle Naruto-Inspired Visual Elements.
 
 ---
 
 ## ✨ Features
 
-- ⚡ **Interactive Mission Showcase**: Project cards categorized by rank (*S-Rank*, *A-Rank*) with interactive filter tabs (*All Missions*, *AI & IoT*, *ML & EDA*, *Deep Learning*).
+- ⚡ **Interactive Learning Journey (Missions)**: Three distinct project cards representing the AI/ML pipeline:
+  1. **EDA**: Data cleaning, preprocessing, exploratory data analysis, data visualization, and actionable insights.
+  2. **Machine Learning**: Preprocessing, feature engineering, model training, model evaluation, and performance metrics.
+  3. **Deep Learning**: Neural Networks, deep learning concepts, model optimization, and real-world datasets.
+- 📱 **Filterable Missions**: Interactive tab filters (*All Missions*, *EDA*, *Machine Learning*, *Deep Learning*).
+- 🖱️ **Full Block Contact Cards**: Clickable contact cards for Email, GitHub, and LinkedIn.
 - 📱 **Fully Responsive Layout**: Built with CSS Grid and Flexbox for seamless viewing on desktops, tablets, and mobile devices.
 - 🎯 **Active Scrollspy Navigation**: Automatically highlights active menu links and closes the mobile drawer upon selection.
 - 🎨 **Glassmorphism & Theme Aesthetics**: Dark background (`#0d0d0d`) with frosted glass navbar blur (`backdrop-filter: blur(12px)`) and glowing hover states.
-- 🛡️ **Clean & Secure Standard HTML/CSS/JS**: Zero external frameworks or heavy dependencies. Built with raw performance and accessibility in mind.
 
 ---
 
@@ -46,8 +50,7 @@ Naruto-Portfolio/
 │   ├── docs/               # Resume PDF & documentation guides
 │   │   └── README.txt
 │   ├── images/             # Profile photos & project screenshots
-│   │   ├── profile.png
-│   │   └── smart-fridge.jpg
+│   │   └── profile.png
 │   ├── audio/
 │   ├── fonts/
 │   ├── icons/
@@ -68,54 +71,27 @@ Naruto-Portfolio/
    cd Naruto-Portfolio
    ```
 3. **Open `index.html`**:
-   - Simply double-click `index.html` to view in any modern browser (Chrome, Firefox, Edge, Safari).
-   - Alternatively, serve via VS Code **Live Server** extension or Python HTTP server:
+   - Double-click `index.html` to view in any modern browser.
+   - Or serve via Python HTTP server:
      ```bash
      python -m http.server 8000
      ```
 
 ---
 
-## ⚙️ Customization Guide
+## ⚙️ Links & Customization Guide
 
-### 1. Adding Your Resume PDF
+### 1. External Links Configured
+- **GitHub**: [https://github.com/AdityaRunwal](https://github.com/AdityaRunwal)
+- **LinkedIn**: [https://linkedin.com/in/adityarunwal](https://linkedin.com/in/adityarunwal)
+- **Email**: [mailto:adityarunwal22@gmail.com](mailto:adityarunwal22@gmail.com)
+
+### 2. Adding Your Resume PDF
 Place your resume PDF file inside `assets/docs/` as `resume.pdf`:
 ```
 assets/docs/resume.pdf
 ```
 The "Resume PDF" button in the Hero section is pre-configured to automatically download this file.
-
-### 2. Updating Your LinkedIn URL
-Open `index.html`, locate the LinkedIn card (~line 363), and replace `YOUR_LINKEDIN_HANDLE` with your actual username:
-```html
-<a href="https://linkedin.com/in/adityarunwal" target="_blank" rel="noopener noreferrer">
-    linkedin.com/in/adityarunwal
-</a>
-```
-
-### 3. Adding New Missions (Projects)
-To add a new project card, copy one of the `.project-card` blocks inside `index.html` under `#missions`:
-```html
-<div class="project-card" data-category="ml-eda">
-    <div class="card-header-badge">
-        <span class="mission-rank rank-a"><i class="fa-solid fa-certificate"></i> A-RANK MISSION</span>
-    </div>
-    <!-- Add image or placeholder -->
-    <h3>Project Title</h3>
-    <p>Project description...</p>
-    <div class="tech-stack">
-        <span>Python</span>
-        <span>Machine Learning</span>
-    </div>
-    <div class="project-buttons">
-        <a href="YOUR_GITHUB_REPO_URL" target="_blank" rel="noopener noreferrer" class="project-btn">
-            <i class="fa-brands fa-github"></i> GitHub Code
-        </a>
-    </div>
-</div>
-```
-- `data-category`: Choose from `"ai-iot"`, `"ml-eda"`, or `"deep-learning"`.
-- `mission-rank`: Use `"rank-s"`, `"rank-a"`, or `"rank-b"`.
 
 ---
 
@@ -124,3 +100,4 @@ To add a new project card, copy one of the `.project-card` blocks inside `index.
 **Aditya Runwal**
 - Email: [adityarunwal22@gmail.com](mailto:adityarunwal22@gmail.com)
 - GitHub: [@AdityaRunwal](https://github.com/AdityaRunwal)
+- LinkedIn: [adityarunwal](https://linkedin.com/in/adityarunwal)

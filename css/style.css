@@ -677,6 +677,10 @@ nav ul li a.active::after{
     border-radius:20px;
     border:2px solid transparent;
     transition:0.4s;
+    text-decoration:none;
+    color:white;
+    display:block;
+    cursor:pointer;
 }
 
 .contact-card:hover{
@@ -694,15 +698,19 @@ nav ul li a.active::after{
 .contact-card h3{
     font-size:24px;
     margin-bottom:15px;
+    color:white;
 }
 
-.contact-card a{
+.contact-link-text{
     color:#d5d5d5;
     text-decoration:none;
     word-break:break-word;
+    font-size:16px;
+    transition:0.3s;
+    display:block;
 }
 
-.contact-card a:hover{
+.contact-card:hover .contact-link-text{
     color:#ff7b00;
 }
 
