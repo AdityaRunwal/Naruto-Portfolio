@@ -4,366 +4,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio of Aditya Runwal - Aspiring AI/ML Engineer passionate about Artificial Intelligence, Machine Learning, Deep Learning, and Data Science.">
-    <title>Aditya Runwal | AI/ML Shinobi Portfolio</title>
+    <meta name="description"
+        content="Personal Portfolio of Aditya Runwal - Aspiring AI/ML Engineer passionate about Artificial Intelligence, Machine Learning, Deep Learning, and Data Science.">
+    <title>Aditya Runwal | AI & Machine Learning Engineer</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+    <!-- Background Particle Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
     <!-- ================= NAVIGATION ================= -->
-
     <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-fire-flame-curved logo-icon"></i>
+                <span>Aditya Runwal</span>
+            </a>
 
-        <div class="logo">
-            <i class="fa-solid fa-fire-flame-curved logo-icon"></i> Aditya Runwal
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Explore My Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-
-        <ul id="nav-menu">
-
-            <li><a href="#home">Home</a></li>
-
-            <li><a href="#about">About</a></li>
-
-            <li><a href="#skills">Skills</a></li>
-
-            <li><a href="#missions">Missions</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
     </nav>
 
     <!-- ================= HERO ================= -->
-
     <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
 
-        <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-greeting">
+                        <span>HELLO, I'M</span>
+                    </div>
 
-            <div class="hero-badge">
-                <i class="fa-solid fa-scroll"></i> Ninja Way of Code &bull; AI/ML Practitioner
+                    <h1 class="hero-name">
+                        <span class="first-name">ADITYA</span>
+                        <span class="last-name">RUNWAL</span>
+                    </h1>
+
+                    <div class="hero-title">
+                        Aspiring AI & Machine Learning Engineer
+                    </div>
+
+                    <div class="hero-tagline-pills">
+                        <div class="tagline-item">
+                            <i class="fa-solid fa-microchip"></i>
+                            <span>Building intelligent systems.</span>
+                        </div>
+                        <div class="tagline-item">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Exploring data.</span>
+                        </div>
+                        <div class="tagline-item">
+                            <i class="fa-solid fa-network-wired"></i>
+                            <span>Training the future.</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="#work" class="btn btn-primary">
+                            <i class="fa-solid fa-compass"></i> Explore My Work
+                        </a>
+
+                        <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline">
+                            <i class="fa-brands fa-github"></i> View GitHub
+                        </a>
+
+                        <a href="assets/docs/resume.pdf" class="btn btn-secondary" download="Aditya_Runwal_Resume.pdf"
+                            title="Download Resume">
+                            <i class="fa-solid fa-file-pdf"></i> Resume PDF
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-avatar-wrapper">
+                    <div class="avatar-frame">
+                        <img src="assets/images/profile.png" alt="Aditya Runwal Profile" class="avatar-img">
+                    </div>
+                </div>
+
             </div>
-
-            <h1>Hi, I'm</h1>
-
-            <h2>Aditya Runwal</h2>
-
-            <h3>Aspiring <span class="accent-text">AI / ML Engineer</span></h3>
-
-            <p>
-                Driven by relentless determination, I specialize in Artificial Intelligence,
-                Machine Learning, Deep Learning, and Exploratory Data Analysis to build intelligent, real-world solutions.
-            </p>
-
-            <div class="hero-tags">
-                <span><i class="fa-solid fa-chart-line"></i> Exploratory Data Analysis</span>
-                <span><i class="fa-solid fa-robot"></i> Machine Learning</span>
-                <span><i class="fa-solid fa-brain"></i> Deep Learning</span>
-                <span><i class="fa-brands fa-python"></i> Python & C++</span>
-            </div>
-
-            <div class="buttons">
-
-                <a href="#missions" class="btn">
-                    <i class="fa-solid fa-scroll"></i> View Missions
-                </a>
-
-                <a href="assets/docs/resume.pdf" class="btn-outline" download="Aditya_Runwal_Resume.pdf" title="Add your resume PDF to assets/docs/resume.pdf">
-                    <i class="fa-solid fa-file-arrow-down"></i> Resume PDF
-                </a>
-
-                <a href="#contact" class="btn-outline">
-                    <i class="fa-solid fa-paper-plane"></i> Contact Me
-                </a>
-
-            </div>
-
         </div>
-
     </section>
 
     <!-- ================= ABOUT ================= -->
-
     <section class="about" id="about">
+        <div class="container">
+            <div class="about-card">
 
-        <div class="about-image">
+                <div class="about-text">
+                    <span class="section-tag"><i class="fa-solid fa-fire"></i> Core Ethos</span>
+                    <h2>About Me</h2>
+                    <p>
+                        I am an aspiring AI & Machine Learning Engineer dedicated to engineering intelligent,
+                        data-driven systems.
+                    </p>
+                    <p>
+                        My journey bridges data exploration, statistical modeling, machine learning algorithms, and deep
+                        neural architectures. Driven by relentless determination, I solve complex problems by
+                        progressing from raw data insights to predictive intelligence.
+                    </p>
+                </div>
 
-            <img src="assets/images/profile.png" alt="Aditya Runwal">
+                <div class="about-highlights">
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-brain"></i>
+                        <h4>Neural Systems</h4>
+                        <p>Focusing on deep learning models and architecture designs.</p>
+                    </div>
 
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <h4>Data Intelligence</h4>
+                        <p>Extracting statistical patterns & actionable insights.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-code"></i>
+                        <h4>Languages</h4>
+                        <p>Python primary, C++ for performance, Git for collaboration.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h4>Problem Solving</h4>
+                        <p>Methodical approach from EDA to deployed ML models.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        <div class="about-content">
-
-            <span class="section-tag"><i class="fa-solid fa-fire"></i> Ninja Way</span>
-
-            <h2>About Me</h2>
-
-            <p>
-                I am an aspiring AI & Machine Learning Engineer passionate about
-                Artificial Intelligence, Machine Learning, Data Science, and Deep Learning architectures.
-            </p>
-
-            <p>
-                With continuous learning as my core ethos, I solve complex problems by progressing from raw data insights to predictive machine learning models and neural networks.
-            </p>
-
-        </div>
-
     </section>
 
-    <!-- ================= SKILLS ================= -->
-
+    <!-- ================= SKILLS (TECH ARSENAL) ================= -->
     <section class="skills" id="skills">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-shuriken"></i> Tech Arsenal</span>
+            <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+            <p class="section-subtitle">Core technologies, programming languages, and engineering frameworks</p>
 
-        <span class="section-tag"><i class="fa-solid fa-shuriken"></i> Tech Arsenal</span>
+            <div class="skills-grid">
 
-        <h2 class="section-title">Technical Jutsu & Skills</h2>
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <span class="skill-tag">Primary AI/ML Language</span>
+                </div>
 
-        <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>C++</h3>
+                    <span class="skill-tag">Systems & Performance</span>
+                </div>
 
-            <div class="skill-card">
-                <i class="fa-brands fa-python"></i>
-                <h3>Python</h3>
-                <span class="skill-rank">Primary Language</span>
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>Machine Learning</h3>
+                    <span class="skill-tag">Predictive Modeling & Scikit-Learn</span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3>Deep Learning</h3>
+                    <span class="skill-tag">Neural Networks & Architectures</span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3>DSA</h3>
+                    <span class="skill-tag">Data Structures & Algorithms</span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
+                    <h3>Git</h3>
+                    <span class="skill-tag">Version Control & Workflow</span>
+                </div>
+
             </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-code"></i>
-                <h3>C++</h3>
-                <span class="skill-rank">System & Performance</span>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-robot"></i>
-                <h3>Machine Learning</h3>
-                <span class="skill-rank">Core Discipline</span>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-brain"></i>
-                <h3>Deep Learning</h3>
-                <span class="skill-rank">Neural Networks</span>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-solid fa-diagram-project"></i>
-                <h3>Data Structures & Algorithms</h3>
-                <span class="skill-rank">Problem Solving</span>
-            </div>
-
-            <div class="skill-card">
-                <i class="fa-brands fa-git-alt"></i>
-                <h3>Git</h3>
-                <span class="skill-rank">Version Control</span>
-            </div>
-
         </div>
-
     </section>
 
-    <!-- ================= MISSIONS (PROJECTS) ================= -->
+    <!-- ================= EXPLORE MY WORK (3 CATEGORIES) ================= -->
+    <section class="work-section" id="work">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-cubes"></i> Portfolio Hub</span>
+            <h2 class="section-title">Explore My <span class="highlight">Work</span></h2>
+            <p class="section-subtitle">Select a category below to explore specific engineering projects, code
+                repositories, and findings.</p>
 
-    <section class="projects" id="missions">
+            <div class="category-grid">
 
-        <span class="section-tag"><i class="fa-solid fa-scroll"></i> Learning Journey</span>
+                <!-- Category 1: EDA -->
+                <a href="eda.html" class="category-card">
+                    <div>
+                        <div class="category-badge">
+                            <i class="fa-solid fa-chart-line"></i> Category 01
+                        </div>
+                        <div class="category-visual">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3>Exploratory Data Analysis</h3>
+                        <p>Data cleaning, statistical insight discovery, visualization pipelines, and uncovering raw
+                            data trends.</p>
+                    </div>
+                    <div class="category-cta">
+                        <span>Explore Category</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
 
-        <h2 class="section-title">My Missions</h2>
+                <!-- Category 2: Machine Learning -->
+                <a href="machine-learning.html" class="category-card">
+                    <div>
+                        <div class="category-badge">
+                            <i class="fa-solid fa-gears"></i> Category 02
+                        </div>
+                        <div class="category-visual">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3>Machine Learning</h3>
+                        <p>Supervised and unsupervised predictive models, feature engineering, classification,
+                            regression, and model evaluation.</p>
+                    </div>
+                    <div class="category-cta">
+                        <span>Explore Category</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
 
-        <!-- Mission Filter Tabs -->
-        <div class="mission-filters">
-            <button class="filter-btn active" data-filter="all">All Missions</button>
-            <button class="filter-btn" data-filter="eda">EDA</button>
-            <button class="filter-btn" data-filter="ml">Machine Learning</button>
-            <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+                <!-- Category 3: Deep Learning -->
+                <a href="deep-learning.html" class="category-card">
+                    <div>
+                        <div class="category-badge">
+                            <i class="fa-solid fa-network-wired"></i> Category 03
+                        </div>
+                        <div class="category-visual">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3>Deep Learning</h3>
+                        <p>Neural network architectures, deep representations, optimization algorithms, and advanced
+                            intelligent models.</p>
+                    </div>
+                    <div class="category-cta">
+                        <span>Explore Category</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
+
+            </div>
         </div>
-
-        <div class="projects-container">
-
-            <!-- Mission 1: Exploratory Data Analysis -->
-            <div class="project-card" data-category="eda">
-
-                <div class="card-header-badge">
-                    <span class="mission-rank rank-s"><i class="fa-solid fa-chart-pie"></i> MISSION I: EDA</span>
-                </div>
-
-                <div class="project-placeholder-image">
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
-
-                <h3>Exploratory Data Analysis</h3>
-
-                <p>
-                    Focuses on data cleaning, data preprocessing, exploratory data analysis, interactive data visualization, and uncovering meaningful statistical patterns to extract actionable insights from raw datasets.
-                </p>
-
-                <div class="tech-stack">
-
-                    <span>Data Cleaning</span>
-
-                    <span>Preprocessing</span>
-
-                    <span>EDA</span>
-
-                    <span>Data Visualization</span>
-
-                    <span>Insights</span>
-
-                </div>
-
-                <div class="project-buttons">
-
-                    <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="project-btn">
-                        <i class="fa-brands fa-github"></i> GitHub Code
-                    </a>
-
-                    <a href="#contact" class="project-btn project-btn-secondary">
-                        <i class="fa-solid fa-chart-column"></i> View Insights
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Mission 2: Machine Learning -->
-            <div class="project-card" data-category="ml">
-
-                <div class="card-header-badge">
-                    <span class="mission-rank rank-a"><i class="fa-solid fa-gears"></i> MISSION II: MACHINE LEARNING</span>
-                </div>
-
-                <div class="project-placeholder-image">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-
-                <h3>Machine Learning Project</h3>
-
-                <p>
-                    Focuses on advanced data preprocessing, feature engineering, predictive model training, hyperparameter tuning, model evaluation, and analyzing performance metrics.
-                </p>
-
-                <div class="tech-stack">
-
-                    <span>Data Preprocessing</span>
-
-                    <span>Feature Engineering</span>
-
-                    <span>Model Training</span>
-
-                    <span>Model Evaluation</span>
-
-                    <span>Performance Metrics</span>
-
-                </div>
-
-                <div class="project-buttons">
-
-                    <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="project-btn">
-                        <i class="fa-brands fa-github"></i> GitHub Code
-                    </a>
-
-                    <a href="#contact" class="project-btn project-btn-secondary">
-                        <i class="fa-solid fa-sliders"></i> Model Details
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Mission 3: Deep Learning -->
-            <div class="project-card" data-category="deep-learning">
-
-                <div class="card-header-badge">
-                    <span class="mission-rank rank-a"><i class="fa-solid fa-brain"></i> MISSION III: DEEP LEARNING</span>
-                </div>
-
-                <div class="project-placeholder-image">
-                    <i class="fa-solid fa-network-wired"></i>
-                </div>
-
-                <h3>Deep Learning Project</h3>
-
-                <p>
-                    Focuses on Neural Network architectures, Deep Learning concepts, model training and evaluation, and preparing future implementations trained on real-world datasets.
-                </p>
-
-                <div class="tech-stack">
-
-                    <span>Neural Networks</span>
-
-                    <span>Deep Learning</span>
-
-                    <span>Model Training</span>
-
-                    <span>Evaluation</span>
-
-                    <span>Real-World Datasets</span>
-
-                </div>
-
-                <div class="project-buttons">
-
-                    <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="project-btn">
-                        <i class="fa-brands fa-github"></i> GitHub Code
-                    </a>
-
-                    <a href="#contact" class="project-btn project-btn-secondary">
-                        <i class="fa-solid fa-atom"></i> Architecture
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
     </section>
 
     <!-- ================= CONTACT ================= -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+            <h2 class="section-title">Connect & <span class="highlight">Collaborate</span></h2>
+            <p class="section-subtitle">Reach out via email or explore my professional profiles below.</p>
 
-    <section class="contact" id="contact">
+            <div class="contact-cards-grid">
 
-        <span class="section-tag"><i class="fa-solid fa-comment-dots"></i> Get In Touch</span>
+                <!-- Email Card -->
+                <a href="#contact-form-section" class="contact-channel-card" id="email-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <span>adityarunwal22@gmail.com</span>
+                </a>
 
-        <h2 class="section-title">Summoning & Contact</h2>
+                <!-- GitHub Card -->
+                <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer"
+                    class="contact-channel-card">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <span>github.com/AdityaRunwal</span>
+                </a>
 
-        <div class="contact-container">
+                <!-- LinkedIn Card -->
+                <a href="https://linkedin.com/in/adityarunwal" target="_blank" rel="noopener noreferrer"
+                    class="contact-channel-card">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <span>linkedin.com/in/adityarunwal</span>
+                </a>
 
-            <a href="mailto:adityarunwal22@gmail.com" class="contact-card">
-                <i class="fa-solid fa-envelope"></i>
-                <h3>Email</h3>
-                <span class="contact-link-text">adityarunwal22@gmail.com</span>
-            </a>
-
-            <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="contact-card">
-                <i class="fa-brands fa-github"></i>
-                <h3>GitHub</h3>
-                <span class="contact-link-text">github.com/AdityaRunwal</span>
-            </a>
-
-            <a href="https://linkedin.com/in/adityarunwal" target="_blank" rel="noopener noreferrer" class="contact-card">
-                <i class="fa-brands fa-linkedin"></i>
-                <h3>LinkedIn</h3>
-                <span class="contact-link-text">linkedin.com/in/adityarunwal</span>
-            </a>
+            </div>
 
         </div>
-
     </section>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- ================= CONTACT MODAL POPUP ================= -->
+    <div class="contact-modal-overlay" id="contact-modal" aria-hidden="true">
+        <div class="contact-modal-backdrop" id="modal-backdrop"></div>
+        <div class="contact-modal-box" role="dialog" aria-labelledby="modal-title">
+            <div class="modal-header">
+                <h3 id="modal-title"><i class="fa-solid fa-paper-plane" style="color: var(--accent-orange);"></i> GET IN
+                    TOUCH</h3>
+                <button class="modal-close-btn" id="modal-close" aria-label="Close Contact Modal">&times;</button>
+            </div>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Name</label>
+                    <input type="text" id="contact-name" class="form-control" placeholder="Your Name" required>
+                </div>
 
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" class="form-control" placeholder="your.email@example.com"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" class="form-control" placeholder="Write your message here..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+                    <i class="fa-solid fa-paper-plane"></i> SEND MESSAGE
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
     <footer>
-        <p>&copy; 2026 Aditya Runwal &bull; AI/ML Shinobi Engineer. Built with determination.</p>
+        <div class="container">
+            <p>
+                &copy; 2026 Aditya Runwal &bull; AI/ML Engineer.
+                Built with precision & <i class="fa-solid fa-fire"></i> determination.
+            </p>
+        </div>
     </footer>
 
+    <!-- Custom JavaScript -->
     <script src="js/script.js"></script>
 
 </body>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Machine Learning Projects by Aditya Runwal - AI/ML Engineer.">
+    <title>Machine Learning | Aditya Runwal</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav id="navbar" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-fire-flame-curved logo-icon"></i>
+                <span>Aditya Runwal</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#work" class="active">Explore My Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <header class="page-header">
+        <div class="container">
+            <a href="index.html#work" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <span class="section-tag"><i class="fa-solid fa-gears"></i> Category 02</span>
+            <h1 class="section-title">MACHINE <span class="highlight">LEARNING</span></h1>
+            <p class="section-subtitle">Building models that learn from data.</p>
+        </div>
+    </header>
+
+    <!-- ================= PROJECTS GRID ================= -->
+    <section class="projects-section">
+        <div class="container">
+            
+            <div class="projects-grid">
+                
+                <!-- Project 1: Predictive Modeling Framework -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-solid fa-sliders"></i></span>
+                            <span class="tech-tag">Framework</span>
+                        </div>
+                        <h3>Predictive Modeling & Feature Engineering</h3>
+                        <p>
+                            Supervised predictive modeling pipeline. Covers advanced feature scaling, categorical encoding, model evaluation, cross-validation, and hyperparameter optimization using Scikit-Learn algorithms.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-Learn</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Evaluation Metrics</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                            <i class="fa-brands fa-github"></i> GitHub Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Placeholder 1: Classification & Regression -->
+                <div class="project-card placeholder-card">
+                    <i class="fa-solid fa-folder-plus"></i>
+                    <h3>Classification & Regression Pipelines</h3>
+                    <p>Ensemble models and evaluation metrics analysis coming soon.</p>
+                    <span class="tech-tag">In Progress</span>
+                </div>
+
+                <!-- Placeholder 2: Coming Soon -->
+                <div class="project-card placeholder-card">
+                    <i class="fa-solid fa-folder-plus"></i>
+                    <h3>Future Machine Learning Project</h3>
+                    <p>Real-world predictive ML implementation.</p>
+                    <span class="tech-tag">Planned</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 Aditya Runwal &bull; AI/ML Engineer.
+                Built with precision & <i class="fa-solid fa-fire"></i> determination.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
