@@ -20,9 +20,38 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/intro.css">
 </head>
 
 <body>
+
+    <!-- ================= INTRO ANIMATION ================= -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+        <div class="intro-fog"></div>
+        <div class="intro-sweep"></div>
+
+        <div class="intro-seal" aria-hidden="true">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="92" fill="none" stroke="var(--accent-orange)" stroke-width="1.2" opacity="0.55"/>
+                <circle cx="100" cy="100" r="70" fill="none" stroke="var(--accent-orange)" stroke-width="1" opacity="0.35"/>
+                <circle cx="100" cy="100" r="48" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.25"/>
+                <g stroke="var(--accent-orange)" stroke-width="1.4" opacity="0.5">
+                    <line x1="100" y1="8" x2="100" y2="26"/>
+                    <line x1="100" y1="174" x2="100" y2="192"/>
+                    <line x1="8" y1="100" x2="26" y2="100"/>
+                    <line x1="174" y1="100" x2="192" y2="100"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="intro-content">
+            <span class="intro-kicker">Entering</span>
+            <h1 class="intro-name">ADITYA <span class="intro-accent">RUNWAL</span></h1>
+        </div>
+
+        <button id="intro-skip" type="button">Skip <i class="fa-solid fa-forward"></i></button>
+    </div>
 
     <!-- Background Particle Canvas -->
     <canvas id="bg-canvas"></canvas>
@@ -377,6 +406,9 @@
             </p>
         </div>
     </footer>
+
+    <!-- Intro animation (must load before script.js, runs independently) -->
+    <script src="js/intro.js"></script>
 
     <!-- Custom JavaScript -->
     <script src="js/script.js"></script>

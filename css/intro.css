@@ -1,0 +1,304 @@
+/* ==========================================================================
+   INTRO / LOADING ANIMATION — "ENTERING THE NINJA WORLD"
+   Plays once per session, skippable, respects prefers-reduced-motion.
+   Reuses the portfolio's existing --accent-orange / --accent-blue tokens
+   and adds a small deep-green accent purely for this sequence.
+   ========================================================================== */
+
+:root {
+  --intro-green: #113322;
+  --intro-green-glow: rgba(30, 120, 80, 0.45);
+  --intro-duration: 3200ms;
+}
+
+html.intro-lock,
+html.intro-lock body {
+  overflow: hidden;
+  height: 100%;
+}
+
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 40%, #0d0d12 0%, #050506 65%, #000000 100%);
+  overflow: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#intro-overlay.intro-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#intro-overlay * {
+  box-sizing: border-box;
+}
+
+/* Canvas holds the chakra energy / particle system */
+#intro-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Soft drifting fog layer, pure CSS */
+.intro-fog {
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(ellipse 40% 30% at 20% 70%, var(--intro-green-glow) 0%, transparent 70%),
+    radial-gradient(ellipse 35% 25% at 80% 30%, rgba(255, 123, 0, 0.12) 0%, transparent 70%);
+  filter: blur(40px);
+  opacity: 0;
+  animation: introFogIn 1.4s ease-out forwards, introFogDrift 6s ease-in-out infinite 1.4s;
+}
+
+@keyframes introFogIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes introFogDrift {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(2%, -1.5%) scale(1.05);
+  }
+}
+
+/* Fast diagonal brush-stroke / motion-blur sweep (Scene 3) */
+.intro-sweep {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg,
+      transparent 0%,
+      rgba(255, 123, 0, 0.0) 35%,
+      rgba(255, 160, 60, 0.55) 48%,
+      rgba(255, 255, 255, 0.85) 50%,
+      rgba(255, 160, 60, 0.55) 52%,
+      rgba(255, 123, 0, 0.0) 65%,
+      transparent 100%);
+  filter: blur(6px);
+  transform: skewX(-18deg) translateX(0);
+  opacity: 0;
+  animation: introSweep 0.6s cubic-bezier(0.6, 0, 0.2, 1) forwards;
+  animation-delay: calc(var(--intro-duration) * 0.42);
+}
+
+@keyframes introSweep {
+  0% {
+    transform: skewX(-18deg) translateX(0);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: skewX(-18deg) translateX(340%);
+    opacity: 0;
+  }
+}
+
+/* Abstract seal / rune ring (Scene 3) */
+.intro-seal {
+  position: absolute;
+  width: min(46vw, 420px);
+  height: min(46vw, 420px);
+  opacity: 0;
+  transform: scale(0.75) rotate(-25deg);
+  animation: introSealIn 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--intro-duration) * 0.4);
+}
+
+@keyframes introSealIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-35deg);
+  }
+
+  35% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.55;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.25) rotate(15deg);
+  }
+}
+
+.intro-seal svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 18px rgba(255, 123, 0, 0.55));
+}
+
+/* Content: name reveal (Scene 4) */
+.intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  opacity: 0;
+  animation: introContentIn 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--intro-duration) * 0.6);
+}
+
+.intro-kicker {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent-orange, #ff7b00);
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
+.intro-name {
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 800;
+  font-size: clamp(2rem, 7vw, 4.2rem);
+  letter-spacing: 2px;
+  color: var(--text-primary, #f8fafc);
+  position: relative;
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  animation: introTextWipe 900ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: calc(var(--intro-duration) * 0.63);
+  text-shadow: 0 0 30px rgba(255, 123, 0, 0.35);
+}
+
+.intro-name .intro-accent {
+  color: var(--accent-orange, #ff7b00);
+  text-shadow: 0 0 25px var(--accent-orange-glow, rgba(255, 123, 0, 0.4));
+}
+
+@keyframes introTextWipe {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes introContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skip control */
+#intro-skip {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgba(248, 250, 252, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 123, 0, 0.25);
+  border-radius: 9999px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  opacity: 0;
+  animation: introSkipIn 0.5s ease forwards;
+  animation-delay: 0.5s;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+#intro-skip:hover,
+#intro-skip:focus-visible {
+  color: var(--text-primary, #f8fafc);
+  border-color: rgba(255, 123, 0, 0.6);
+  background: rgba(255, 123, 0, 0.08);
+  outline: none;
+}
+
+@keyframes introSkipIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  #intro-skip {
+    right: 16px;
+    bottom: 16px;
+    padding: 7px 14px;
+    font-size: 0.72rem;
+  }
+}
+
+/* Respect reduced motion: skip straight to a simple fade, no canvas motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .intro-fog,
+  .intro-sweep,
+  .intro-seal {
+    display: none;
+  }
+
+  .intro-content {
+    animation: none;
+    opacity: 1;
+  }
+
+  .intro-name {
+    animation: none;
+    clip-path: inset(0 0 0 0);
+  }
+
+  #intro-skip {
+    animation: none;
+    opacity: 1;
+  }
+
+  #intro-overlay {
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+}
