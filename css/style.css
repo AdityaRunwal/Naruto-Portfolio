@@ -1214,3 +1214,204 @@ footer i {
     padding: 24px;
   }
 }
+
+/* ==========================================================================
+   FORM STATUS MESSAGES & FEEDBACK
+   ========================================================================== */
+.form-status-banner {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.form-status-banner.status-success {
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  color: #2ecc71;
+}
+
+.form-status-banner.status-error {
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+  color: #e74c3c;
+}
+
+.form-status-banner.status-info {
+  background: rgba(255, 123, 0, 0.15);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-orange);
+}
+
+.form-control.is-invalid {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.3) !important;
+}
+
+/* ==========================================================================
+   CUSTOM CURSOR & AMBIENT SPOTLIGHT
+   ========================================================================== */
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor label {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-orange);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 0 10px var(--accent-orange-glow);
+  opacity: 0;
+}
+
+.custom-cursor-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 123, 0, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 0 15px rgba(255, 123, 0, 0.15);
+  opacity: 0;
+}
+
+/* Cursor states on hover */
+body.cursor-hover .custom-cursor-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+body.cursor-hover .custom-cursor-outer {
+  width: 52px;
+  height: 52px;
+  border-color: var(--accent-orange);
+  background-color: rgba(255, 123, 0, 0.08);
+}
+
+/* Ambient Mouse Spotlight */
+.mouse-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 123, 0, 0.06) 0%, rgba(0, 191, 255, 0.02) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Dynamic Spotlight Sheen on Cards */
+.category-card,
+.skill-card,
+.project-card,
+.contact-channel-card,
+.highlight-box {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card::before,
+.project-card::before,
+.contact-channel-card::before {
+  content: '';
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255, 123, 0, 0.12) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.category-card:hover::before,
+.project-card:hover::before,
+.contact-channel-card:hover::before {
+  opacity: 1;
+}
+
+/* Click Ripple Animation */
+.cursor-click-ripple {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-orange);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99997;
+  transform: translate(-50%, -50%) scale(1);
+  animation: cursorRipple 0.5s ease-out forwards;
+  box-shadow: 0 0 15px var(--accent-orange-glow);
+}
+
+@keyframes cursorRipple {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+    border-color: var(--accent-blue);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor-dot,
+  .custom-cursor-outer,
+  .mouse-spotlight,
+  .cursor-click-ripple {
+    display: none !important;
+  }
+  
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: auto !important;
+  }
+
+  .category-card,
+  .skill-card,
+  .project-card,
+  .contact-channel-card,
+  .highlight-box {
+    transform: none !important;
+  }
+}
