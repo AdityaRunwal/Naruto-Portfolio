@@ -25,11 +25,27 @@
     <canvas id="bg-canvas"></canvas>
 
     <!-- ================= NAVIGATION ================= -->
-    <nav id="navbar" class="scrolled">
+    <nav id="navbar" class="scrolled" aria-label="Main Navigation">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <i class="fa-solid fa-fire-flame-curved logo-icon"></i>
-                <span>Aditya Runwal</span>
+            <a href="index.html" class="nav-brand">
+                <svg class="uzumaki-crest-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Uzumaki Outer Ring -->
+                    <circle cx="50" cy="50" r="44" stroke="#ff7a00" stroke-width="5" />
+                    
+                    <!-- Uzumaki Spiral Swirl -->
+                    <path d="M 50,50 
+                             A 5,5 0 0,0 55,45 
+                             A 10,10 0 0,0 45,35 
+                             A 16,16 0 0,0 34,50 
+                             A 22,22 0 0,0 50,72 
+                             A 28,28 0 0,0 78,50 
+                             A 34,34 0 0,0 50,16" 
+                          stroke="#ff5500" 
+                          stroke-width="5.5" 
+                          stroke-linecap="round" 
+                          fill="none" />
+                </svg>
+                <span class="brand-text">Aditya Runwal</span>
             </a>
 
             <ul class="nav-links" id="nav-links">
@@ -40,7 +56,7 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
 
-            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -64,9 +80,12 @@
             
             <div class="projects-grid">
                 
-                <!-- Project 1: Predictive Modeling Framework -->
-                <div class="project-card">
-                    <div>
+                <!-- Sub-project 1: Predictive Modeling Framework -->
+                <div class="project-card has-image">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/ml-project1.jpg" onerror="this.onerror=null; this.src='assets/images/projects/project2.jpg'" alt="Predictive Modeling & Feature Engineering" class="project-card-img" loading="lazy">
+                    </div>
+                    <div class="project-card-body">
                         <div class="project-header">
                             <span class="project-icon"><i class="fa-solid fa-sliders"></i></span>
                             <span class="tech-tag">Framework</span>
@@ -90,20 +109,60 @@
                     </div>
                 </div>
 
-                <!-- Placeholder 1: Classification & Regression -->
-                <div class="project-card placeholder-card">
-                    <i class="fa-solid fa-folder-plus"></i>
-                    <h3>Classification & Regression Pipelines</h3>
-                    <p>Ensemble models and evaluation metrics analysis coming soon.</p>
-                    <span class="tech-tag">In Progress</span>
+                <!-- Sub-project 2: Classification & Regression Pipelines -->
+                <div class="project-card has-image">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/ml-project2.jpg" onerror="this.onerror=null; this.src='assets/images/projects/project1.jpg'" alt="Classification & Regression Pipelines" class="project-card-img" loading="lazy">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-solid fa-gears"></i></span>
+                            <span class="tech-tag">In Progress</span>
+                        </div>
+                        <h3>Classification & Regression Pipelines</h3>
+                        <p>
+                            Supervised classification algorithms, regression modeling, ensemble methods (Random Forest, XGBoost), and model evaluation metrics analysis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-Learn</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Model Metrics</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                            <i class="fa-brands fa-github"></i> GitHub Code
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Placeholder 2: Coming Soon -->
-                <div class="project-card placeholder-card">
-                    <i class="fa-solid fa-folder-plus"></i>
-                    <h3>Future Machine Learning Project</h3>
-                    <p>Real-world predictive ML implementation.</p>
-                    <span class="tech-tag">Planned</span>
+                <!-- Sub-project 3: Real-World Predictive ML -->
+                <div class="project-card has-image">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/ml-project3.jpg" onerror="this.onerror=null; this.src='assets/images/projects/project3.jpg'" alt="Real-World Predictive ML" class="project-card-img" loading="lazy">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-solid fa-robot"></i></span>
+                            <span class="tech-tag">Planned</span>
+                        </div>
+                        <h3>Real-World Predictive ML</h3>
+                        <p>
+                            End-to-end machine learning pipeline implementation from raw data ingestion to production model inference and monitoring.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MLFlow</span>
+                            <span class="tech-tag">Scikit-Learn</span>
+                            <span class="tech-tag">Deployment</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                            <i class="fa-brands fa-github"></i> GitHub Code
+                        </a>
+                    </div>
                 </div>
 
             </div>

@@ -25,11 +25,27 @@
     <canvas id="bg-canvas"></canvas>
 
     <!-- ================= NAVIGATION ================= -->
-    <nav id="navbar" class="scrolled">
+    <nav id="navbar" class="scrolled" aria-label="Main Navigation">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <i class="fa-solid fa-fire-flame-curved logo-icon"></i>
-                <span>Aditya Runwal</span>
+            <a href="index.html" class="nav-brand">
+                <svg class="uzumaki-crest-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Uzumaki Outer Ring -->
+                    <circle cx="50" cy="50" r="44" stroke="#ff7a00" stroke-width="5" />
+                    
+                    <!-- Uzumaki Spiral Swirl -->
+                    <path d="M 50,50 
+                             A 5,5 0 0,0 55,45 
+                             A 10,10 0 0,0 45,35 
+                             A 16,16 0 0,0 34,50 
+                             A 22,22 0 0,0 50,72 
+                             A 28,28 0 0,0 78,50 
+                             A 34,34 0 0,0 50,16" 
+                          stroke="#ff5500" 
+                          stroke-width="5.5" 
+                          stroke-linecap="round" 
+                          fill="none" />
+                </svg>
+                <span class="brand-text">Aditya Runwal</span>
             </a>
 
             <ul class="nav-links" id="nav-links">
@@ -40,7 +56,7 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
 
-            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -64,9 +80,12 @@
             
             <div class="projects-grid">
                 
-                <!-- Project 1: Neural Network Foundations -->
-                <div class="project-card">
-                    <div>
+                <!-- Sub-project 1: Neural Network Architectures -->
+                <div class="project-card has-image">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/dl-project1.jpg" onerror="this.onerror=null; this.src='assets/images/projects/project3.jpg'" alt="Neural Network Architectures & Optimization" class="project-card-img" loading="lazy">
+                    </div>
+                    <div class="project-card-body">
                         <div class="project-header">
                             <span class="project-icon"><i class="fa-solid fa-brain"></i></span>
                             <span class="tech-tag">Architectures</span>
@@ -90,20 +109,60 @@
                     </div>
                 </div>
 
-                <!-- Placeholder 1: Deep Learning Models -->
-                <div class="project-card placeholder-card">
-                    <i class="fa-solid fa-folder-plus"></i>
-                    <h3>Deep Neural Models</h3>
-                    <p>Advanced neural network training on real-world datasets coming soon.</p>
-                    <span class="tech-tag">In Progress</span>
+                <!-- Sub-project 2: Deep Neural Representation Models -->
+                <div class="project-card has-image">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/dl-project2.jpg" onerror="this.onerror=null; this.src='assets/images/projects/project1.jpg'" alt="Deep Neural Representation Models" class="project-card-img" loading="lazy">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-solid fa-network-wired"></i></span>
+                            <span class="tech-tag">In Progress</span>
+                        </div>
+                        <h3>Deep Neural Representation Models</h3>
+                        <p>
+                            Deep representation learning, convolutional architectures, feature extraction, representation embeddings, and neural model fine-tuning.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">CNNs</span>
+                            <span class="tech-tag">Representation</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                            <i class="fa-brands fa-github"></i> GitHub Code
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Placeholder 2: Coming Soon -->
-                <div class="project-card placeholder-card">
-                    <i class="fa-solid fa-folder-plus"></i>
-                    <h3>Future Deep Learning Project</h3>
-                    <p>Sequence & representation learning models.</p>
-                    <span class="tech-tag">Planned</span>
+                <!-- Sub-project 3: Sequence & Representation Learning -->
+                <div class="project-card has-image">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/dl-project3.jpg" onerror="this.onerror=null; this.src='assets/images/projects/project2.jpg'" alt="Sequence & Representation Learning" class="project-card-img" loading="lazy">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header">
+                            <span class="project-icon"><i class="fa-solid fa-microchip"></i></span>
+                            <span class="tech-tag">Planned</span>
+                        </div>
+                        <h3>Sequence & Representation Learning</h3>
+                        <p>
+                            Sequential data architectures, attention mechanisms, recurrent models, transformer modules, and advanced deep representations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Deep Learning</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/AdityaRunwal" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                            <i class="fa-brands fa-github"></i> GitHub Code
+                        </a>
+                    </div>
                 </div>
 
             </div>

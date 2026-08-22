@@ -76,6 +76,7 @@ body {
 section {
   position: relative;
   z-index: 1;
+  scroll-margin-top: 90px;
 }
 
 /* Container Utility */
@@ -190,22 +191,34 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+/* Navbar Brand Container */
+.nav-brand,
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.25rem;
   font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: 0.5px;
 }
 
-.logo-icon {
-  color: var(--accent-orange);
-  font-size: 1.3rem;
-  filter: drop-shadow(0 0 8px var(--accent-orange-glow));
+/* Uzumaki Spiral Crest */
+.uzumaki-crest-logo,
+.logo-img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.6));
+}
+
+/* Hover Interaction */
+.nav-brand:hover .uzumaki-crest-logo,
+.logo:hover .logo-img {
+  transform: rotate(90deg) scale(1.1);
+  filter: drop-shadow(0 0 12px #ff7a00);
 }
 
 .nav-links {
@@ -248,6 +261,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+.nav-links a:focus-visible,
+.hamburger:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
 .hamburger {
   display: none;
   background: transparent;
@@ -256,6 +277,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.4rem;
   cursor: pointer;
   padding: 8px;
+  transition: color var(--transition-fast);
 }
 
 /* ==========================================================================
@@ -1027,6 +1049,50 @@ textarea.form-control {
   justify-content: space-between;
   transition: var(--transition-normal);
   backdrop-filter: blur(8px);
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card.has-image {
+  padding: 0;
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-card-img {
+  transform: scale(1.08);
+}
+
+.project-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 10, 15, 0.1) 0%, rgba(20, 20, 28, 0.75) 100%);
+  pointer-events: none;
+}
+
+.project-card-body {
+  padding: 24px 28px 16px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card.has-image .project-footer {
+  padding: 0 28px 28px 28px;
 }
 
 .project-card:hover {

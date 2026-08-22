@@ -105,7 +105,7 @@ function initNavigation() {
   const sections = document.querySelectorAll('section[id]');
 
   // Scroll shadow effect
-  window.addEventListener('scroll', () => {
+  function checkScroll() {
     if (navbar) {
       if (window.scrollY > 40) {
         navbar.classList.add('scrolled');
@@ -113,49 +113,98 @@ function initNavigation() {
         navbar.classList.remove('scrolled');
       }
     }
+  }
 
-    // Scrollspy active state for single page anchors
-    let currentSectionId = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  checkScroll();
 
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        link.classList.remove('active');
-        if (currentSectionId && href === `#${currentSectionId}`) {
+  // Active ScrollSpy using IntersectionObserver
+  if (sections.length > 0 && links.length > 0) {
+    function setActiveLink(sectionId) {
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (href === `#${sectionId}` || href.endsWith(`#${sectionId}`))) {
           link.classList.add('active');
+        } else if (href && href.startsWith('#')) {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.getAttribute('id'));
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Handle scroll to bottom edge case for contact link
+    window.addEventListener('scroll', () => {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+        const contactLink = document.querySelector('.nav-links a[href="#contact"]');
+        if (contactLink) {
+          links.forEach(l => l.classList.remove('active'));
+          contactLink.classList.add('active');
         }
       }
-    });
-  });
+    }, { passive: true });
+  }
+
+  // Helper to close mobile menu
+  function closeMobileMenu() {
+    if (!navLinks) return;
+    navLinks.classList.remove('active');
+    if (hamburger) {
+      hamburger.setAttribute('aria-expanded', 'false');
+      const icon = hamburger.querySelector('i');
+      if (icon) {
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-xmark');
+      }
+    }
+  }
 
   // Mobile menu toggle
   if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navLinks.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       const icon = hamburger.querySelector('i');
       if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
+        icon.classList.toggle('fa-bars', !isActive);
+        icon.classList.toggle('fa-xmark', isActive);
       }
     });
 
-    // Close menu when clicking link
+    // Close menu when clicking any nav link
     links.forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        const icon = hamburger.querySelector('i');
-        if (icon) {
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-xmark');
-        }
+        closeMobileMenu();
       });
+    });
+
+    // Close menu when clicking outside navbar
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('active') && navbar && !navbar.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close menu on screen resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+        closeMobileMenu();
+      }
     });
   }
 }
